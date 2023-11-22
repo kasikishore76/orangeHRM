@@ -5,18 +5,21 @@
 		<parameter name="browser" value="chrome"></parameter>
     <classes>
       <class name="qa.testcases.Login_Test"/>
+       <class name="qa.testcases.User_Test"/>
     </classes>
   </test> <!-- Test -->
   <test thread-count="5" name="Test2">
 	  <parameter name="browser" value="firefox"></parameter>
     <classes>
       <class name="qa.testcases.Login_Test"/>
+       <class name="qa.testcases.User_Test"/>
     </classes>
   </test> <!-- Test -->
   <test thread-count="5" name="Test3">
 	  <parameter name="browser" value="edge"></parameter>
     <classes>
       <class name="qa.testcases.Login_Test"/>
+       <class name="qa.testcases.User_Test"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

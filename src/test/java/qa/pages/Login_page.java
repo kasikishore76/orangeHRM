@@ -18,6 +18,7 @@ public class Login_page {
 	private WebElement loginBtn;
 
 	public Login_page(WebDriver driver) {
+		System.out.println(driver);
 		this.driver = driver;
 
 		// This initElements method will create all WebElements

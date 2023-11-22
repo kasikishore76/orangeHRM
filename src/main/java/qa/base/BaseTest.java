@@ -26,13 +26,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 public class BaseTest {
-	public static WebDriver driver;
+	private static WebDriver driver;
+	protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	public static Properties prop;
 
-	@BeforeTest(alwaysRun=true)
-@Parameters("browser")
-	public void initialization(@Optional("chrome")String browser) throws IOException {
-		System.out.println("Before suite method called");
+	@BeforeTest(alwaysRun = true)
+	@Parameters("browser")
+	public void initialization(@Optional("chrome") String browser) throws IOException {
+		System.out.println("Before Test method called");
 		prop = new Properties();
 		FileInputStream file = new FileInputStream(new File(".//src/main/java/qa/configs/config.properties"));
 		prop.load(file);
@@ -40,38 +41,46 @@ public class BaseTest {
 
 		if (browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			ChromeOptions options= new ChromeOptions();
+			ChromeOptions options = new ChromeOptions();
+
 			options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 			driver = new ChromeDriver(options);
+			threadLocalDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
+			threadLocalDriver.set(driver);
 
 		} else if (browser.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
 			driver = new EdgeDriver();
+			threadLocalDriver.set(driver);
 
 		} else {
 			System.out.println("invalid browser name");
 		}
-		  Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
-		    String browserName = cap.getBrowserName().toLowerCase();
-		    System.out.println(browserName);
-		    String os = cap.getPlatform().toString();
-		    System.out.println(os);
-		    String v = cap.getVersion().toString();
-		    System.out.println(v);
+		Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+		String browserName = cap.getBrowserName().toLowerCase();
+		System.out.println(browserName);
+		String os = cap.getPlatform().toString();
+		System.out.println(os);
+		String v = cap.getVersion().toString();
+		System.out.println(v);
 		driver.manage().window().maximize();
-		driver.get( prop.getProperty("url"));
+		driver.get(prop.getProperty("url"));
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 	}
 
-	@AfterTest(alwaysRun=true)
+	@AfterTest(alwaysRun = true)
 	public void tearDown() {
-		System.out.println("After suite method called");
+		System.out.println("After Test method called");
+		threadLocalDriver.remove();
 		driver.quit();
 	}
 
+	public WebDriver getDriver() {
+		return driver;
+	}
 }

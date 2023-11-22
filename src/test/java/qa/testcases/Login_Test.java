@@ -20,13 +20,14 @@ public class Login_Test extends BaseTest {
 
 	@BeforeClass
 	public void createPageObject() {
-		lp = new Login_page(driver);
+		lp = new Login_page(getDriver());
+		System.out.println(getDriver());
 	}
 
 	@Test
 	public void login_Test() {
 		lp.login("Admin", "admin123");
-		assertEquals(driver.getTitle(), "OrangeHRM", "Title missmatch");
+		assertEquals(getDriver().getTitle(), "OrangeHRM", "Title missmatch");
 
 	}
 

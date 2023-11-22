@@ -18,7 +18,7 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import qa.base.BaseTest;
 
-public class TestNGListener implements ITestListener {
+public class TestNGListener  extends BaseTest implements ITestListener{
 	public static ExtentReports extent;
 	public static ExtentTest test;
 
@@ -44,7 +44,7 @@ public class TestNGListener implements ITestListener {
 		ITestListener.super.onTestFailure(result);
 		test.fail(result.getName());
 
-		WebDriver webDriver = BaseTest.driver;
+		WebDriver webDriver = getDriver();
 //		
 //		 WebDriver driver= null;
 //		    try {
