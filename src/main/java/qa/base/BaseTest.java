@@ -26,7 +26,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 public class BaseTest {
-	private static WebDriver driver;
+	private WebDriver driver;
 	protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	public static Properties prop;
 
@@ -81,6 +81,6 @@ public class BaseTest {
 	}
 
 	public WebDriver getDriver() {
-		return driver;
+		return threadLocalDriver.get();
 	}
 }
