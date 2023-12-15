@@ -24,4 +24,9 @@ public class User_Test extends BaseTest {
 		assertTrue(up.assertPage());
 	}
 
+	@Test(dependsOnMethods = {"openUserPage"})
+	public void addUserDetails() {
+		up.addUserDetails();
+	}
+
 }

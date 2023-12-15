@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="12" passed="6" failed="0" skipped="0">
+<testng-results ignored="2" total="5" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-22T20:45:47 IST" name="Suite" finished-at="2023-11-22T20:46:02 IST" duration-ms="15776">
+  <suite started-at="2023-12-14T23:06:01 IST" name="Suite" finished-at="2023-12-14T23:06:18 IST" duration-ms="16628">
     <groups>
     </groups>
-    <test started-at="2023-11-22T20:45:47 IST" name="Test1" finished-at="2023-11-22T20:45:58 IST" duration-ms="11315">
+    <test started-at="2023-12-14T23:06:01 IST" name="Test" finished-at="2023-12-14T23:06:18 IST" duration-ms="16628">
       <class name="qa.testcases.User_Test">
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@644baf4a]" started-at="2023-11-22T20:45:55 IST" name="createPageObject" finished-at="2023-11-22T20:45:55 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@644baf4a]" started-at="2023-12-14T23:06:14 IST" name="createPageObject" finished-at="2023-12-14T23:06:14 IST" duration-ms="13" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPageObject -->
-        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@644baf4a]" started-at="2023-11-22T20:45:55 IST" name="openUserPage" finished-at="2023-11-22T20:45:58 IST" duration-ms="3200" status="PASS">
+        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@644baf4a]" started-at="2023-12-14T23:06:14 IST" name="openUserPage" finished-at="2023-12-14T23:06:17 IST" duration-ms="3085" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUserPage -->
+        <test-method signature="addUserDetails()[pri:0, instance:qa.testcases.User_Test@644baf4a]" started-at="2023-12-14T23:06:17 IST" name="addUserDetails" finished-at="2023-12-14T23:06:18 IST" depends-on-methods="qa.testcases.User_Test.openUserPage" duration-ms="1095" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addUserDetails -->
       </class> <!-- qa.testcases.User_Test -->
       <class name="qa.testcases.Login_Test">
-        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@2e385cce]" started-at="2023-11-22T20:45:47 IST" name="initialization" finished-at="2023-11-22T20:45:53 IST" duration-ms="5787" status="PASS">
+        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@750e2b97]" started-at="2023-12-14T23:06:01 IST" name="initialization" finished-at="2023-12-14T23:06:12 IST" duration-ms="10494" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,93 +32,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@2e385cce]" started-at="2023-11-22T20:45:53 IST" name="createPageObject" finished-at="2023-11-22T20:45:53 IST" duration-ms="35" status="PASS">
+        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@750e2b97]" started-at="2023-12-14T23:06:12 IST" name="createPageObject" finished-at="2023-12-14T23:06:12 IST" duration-ms="194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPageObject -->
-        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@2e385cce]" started-at="2023-11-22T20:45:53 IST" name="login_Test" finished-at="2023-11-22T20:45:55 IST" duration-ms="2061" status="PASS">
+        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@750e2b97]" started-at="2023-12-14T23:06:12 IST" name="login_Test" finished-at="2023-12-14T23:06:14 IST" duration-ms="1692" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@2e385cce]" started-at="2023-11-22T20:45:58 IST" name="tearDown" finished-at="2023-11-22T20:45:58 IST" duration-ms="164" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@750e2b97]" started-at="2023-12-14T23:06:18 IST" name="tearDown" finished-at="2023-12-14T23:06:18 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- qa.testcases.Login_Test -->
-    </test> <!-- Test1 -->
-    <test started-at="2023-11-22T20:45:47 IST" name="Test3" finished-at="2023-11-22T20:45:59 IST" duration-ms="12151">
-      <class name="qa.testcases.User_Test">
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@7f485fda]" started-at="2023-11-22T20:45:56 IST" name="createPageObject" finished-at="2023-11-22T20:45:56 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPageObject -->
-        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@7f485fda]" started-at="2023-11-22T20:45:56 IST" name="openUserPage" finished-at="2023-11-22T20:45:59 IST" duration-ms="3027" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openUserPage -->
-      </class> <!-- qa.testcases.User_Test -->
-      <class name="qa.testcases.Login_Test">
-        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@4b29d1d2]" started-at="2023-11-22T20:45:47 IST" name="initialization" finished-at="2023-11-22T20:45:54 IST" duration-ms="6982" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@4b29d1d2]" started-at="2023-11-22T20:45:54 IST" name="createPageObject" finished-at="2023-11-22T20:45:54 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPageObject -->
-        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@4b29d1d2]" started-at="2023-11-22T20:45:54 IST" name="login_Test" finished-at="2023-11-22T20:45:56 IST" duration-ms="1796" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login_Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@4b29d1d2]" started-at="2023-11-22T20:45:59 IST" name="tearDown" finished-at="2023-11-22T20:45:59 IST" duration-ms="304" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- qa.testcases.Login_Test -->
-    </test> <!-- Test3 -->
-    <test started-at="2023-11-22T20:45:47 IST" name="Test2" finished-at="2023-11-22T20:46:02 IST" duration-ms="15776">
-      <class name="qa.testcases.User_Test">
-        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@15043a2f]" started-at="2023-11-22T20:45:59 IST" name="openUserPage" finished-at="2023-11-22T20:46:01 IST" duration-ms="2745" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openUserPage -->
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@15043a2f]" started-at="2023-11-22T20:45:59 IST" name="createPageObject" finished-at="2023-11-22T20:45:59 IST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPageObject -->
-      </class> <!-- qa.testcases.User_Test -->
-      <class name="qa.testcases.Login_Test">
-        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@4c60d6e9]" started-at="2023-11-22T20:45:47 IST" name="initialization" finished-at="2023-11-22T20:45:56 IST" duration-ms="9416" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@4c60d6e9]" started-at="2023-11-22T20:45:56 IST" name="createPageObject" finished-at="2023-11-22T20:45:56 IST" duration-ms="7" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createPageObject -->
-        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@4c60d6e9]" started-at="2023-11-22T20:45:56 IST" name="login_Test" finished-at="2023-11-22T20:45:59 IST" duration-ms="2455" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- login_Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@4c60d6e9]" started-at="2023-11-22T20:46:01 IST" name="tearDown" finished-at="2023-11-22T20:46:02 IST" duration-ms="1122" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- qa.testcases.Login_Test -->
-    </test> <!-- Test2 -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
