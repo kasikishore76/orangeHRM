@@ -52,7 +52,7 @@ public class Login_Test extends BaseTest {
 		}
 		wb.close();
 		fis.close();
-HttpURLConnection
+
 		return data;
 	}
 

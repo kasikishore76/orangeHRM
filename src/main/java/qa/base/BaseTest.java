@@ -77,7 +77,7 @@ public class BaseTest {
 	public void tearDown() {
 		System.out.println("After Test method called");
 		threadLocalDriver.remove();
-		driver.quit();
+//		driver.quit();
 	}
 
 	public WebDriver getDriver() {
