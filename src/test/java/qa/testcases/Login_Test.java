@@ -7,6 +7,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -17,16 +19,21 @@ import qa.base.BaseTest;
 import qa.pages.Login_page;
 
 public class Login_Test extends BaseTest {
+	private static final Logger logger = LogManager.getLogger(Login_Test.class);
 	Login_page lp;
 
 	@BeforeClass
 	public void createPageObject() {
 		lp = new Login_page(getDriver());
-		System.out.println(getDriver());
 	}
 
 	@Test
 	public void login_Test() {
+		logger.info("Entering username and password for login");
+		logger.debug("Entering username and password for login");
+       
+        logger.warn("Entering username and password for login");
+        logger.error("Entering username and password for login");
 		lp.login("Admin", "admin123");
 		assertEquals(getDriver().getTitle(), "OrangeHRM", "Title missmatch");
 
@@ -34,7 +41,8 @@ public class Login_Test extends BaseTest {
 
 //	@DataProvider(parallel = true)
 	public String[][] loginDetails() throws IOException {
-		File excelfile = new File("C://Users//kasik//workspace//oranagehrm.testng//src//main//resources//files//logins.xlsx");
+		File excelfile = new File(
+				"C://Users//kasik//workspace//oranagehrm.testng//src//main//resources//files//logins.xlsx");
 //		if(excelfile.exists()}
 		FileInputStream fis = new FileInputStream(excelfile);
 		XSSFWorkbook wb = new XSSFWorkbook(fis);

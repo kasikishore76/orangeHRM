@@ -27,14 +27,15 @@ import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
 
 public class BaseTest {
 	private WebDriver driver;
+	//Using ThreadLocal to acheive multithreading for parallel execution
 	protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	public static Properties prop;
 
 	@BeforeTest(alwaysRun = true)
 	@Parameters("browser")
 	public void initialization(@Optional("chrome") String browser) throws IOException {
-		System.out.println("Before Test method called");
-		prop = new Properties();
+		
+			prop = new Properties();
 		FileInputStream file = new FileInputStream(new File(".//src/main/java/qa/configs/config.properties"));
 		prop.load(file);
 //		String browser = prop.getProperty("browser");

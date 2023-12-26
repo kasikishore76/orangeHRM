@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class Login_page {
 	WebDriver driver;
 
-	@FindBy(xpath = "//input[@placeholder='Username']")
+	@FindBy(xpath = "//input[@name='username']")
 	private WebElement usernameInput;
 
-	@FindBy(xpath = "//input[@placeholder='Password']")
+	@FindBy(xpath = "//input[@name='password']")
 	private WebElement passworkdInput;
 
 	@FindBy(xpath = "//button[normalize-space()='Login']")

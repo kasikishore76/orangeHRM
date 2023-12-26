@@ -2,7 +2,9 @@ package qa.pages;
 
 import java.util.List;
 
+import org.apache.poi.util.SystemOutLogger;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,6 +58,15 @@ public class User_Page {
 
 	@FindBy(xpath = "//button[normalize-space()='Save']")
 	WebElement saveBtn;
+
+	@FindBy(xpath = "//label[normalize-space()='Username']/ ../following-sibling::div/input")
+	WebElement usernameSearchText;
+
+	@FindBy(xpath = "(//div[@class='oxd-table-card']//div[@role='row']//button)[2]")
+	WebElement editBtn;
+
+	@FindBy(xpath = "//button[normalize-space()='Search']")
+	WebElement searchBtn;
 
 	public User_Page(WebDriver driver) {
 		System.out.println(driver);
@@ -111,29 +122,137 @@ public class User_Page {
 	public void enterEmployeeName(String empname) throws InterruptedException {
 		empNameText.sendKeys(empname);
 		Thread.sleep(10000);
-		for (WebElement ele : empNames) {
-			System.out.println(ele.getText());
-			if (ele.getText().contains(empname)) {
-				((JavascriptExecutor)driver).executeScript("arguments[0].click();", ele);
-				
+		int maxAttempts = 10;
+		int attempts = 0;
+
+		do {
+			empNameText.sendKeys(Keys.ARROW_DOWN);
+
+			if (empNameText.getAttribute("value").equals(empname)) {
+				empNameText.sendKeys(Keys.ENTER);
 				break;
 			}
+
+			attempts++;
+
+			if (attempts >= maxAttempts) {
+				System.out.println("Maximum attempts reached. Exiting loop.");
+				break;
+			}
+
+			// Add a short delay if needed for synchronization with the page
+			// Thread.sleep(500);
+
+		} while (!empNameText.getAttribute("value").equals(empname));
+
+	}
+
+	public void enterUserName(String usrname) {
+		try {
+			usernameText.sendKeys(usrname);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void enterPassword(String pwd) {
+		try {
+			pwdText.sendKeys(pwd);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void enterCnfPassword(String cnfpwd) {
+		try {
+			confPwdText.sendKeys(cnfpwd);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void clickSave() {
+		try {
+			saveBtn.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void searchAddedUser(String username) {
+		try {
+			usernameSearchText.sendKeys(username);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void clickOnSearch() {
+		try {
+			searchBtn.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
+	}
+
+	public void clickOnEdbutn() {
+		try {
+			editBtn.click();
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
 		}
 	}
-	public void enterUserName(String usrname) {
-		usernameText.sendKeys(usrname);
 
-	}
-	public void enterPassword(String pwd) {
-		pwdText.sendKeys(pwd);
-
-	}
-	public void enterCnfPassword(String cnfpwd) {
-		confPwdText.sendKeys(cnfpwd);
-
-	}
-	public void clickSave() {
-		saveBtn.click();
+	public boolean validateEmpName(String empname) {
+		try {
+			return empNameText.getText().equals(empname);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
 	}
 
+	public boolean validateStatus(String status) {
+		try {
+			return statusdd.getText().equals(status);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean validateUsername(String username) {
+		try {
+			return usernameText.getText().equals(username);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public boolean validateUserRole(String role) {
+		try {
+			return userRoledd.getText().equals(role);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
+	}
 }
