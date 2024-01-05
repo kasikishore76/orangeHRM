@@ -2,24 +2,24 @@
 <testng-results ignored="2" total="6" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-27T00:01:02 IST" name="Suite" finished-at="2023-12-27T00:01:53 IST" duration-ms="50844">
+  <suite started-at="2023-12-27T14:52:21 IST" name="Suite" finished-at="2023-12-27T14:52:55 IST" duration-ms="34149">
     <groups>
     </groups>
-    <test started-at="2023-12-27T00:01:02 IST" name="Test" finished-at="2023-12-27T00:01:53 IST" duration-ms="50844">
+    <test started-at="2023-12-27T14:52:21 IST" name="Test" finished-at="2023-12-27T14:52:55 IST" duration-ms="34149">
       <class name="qa.testcases.User_Test">
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@4a335fa8]" started-at="2023-12-27T00:01:15 IST" name="createPageObject" finished-at="2023-12-27T00:01:15 IST" duration-ms="24" status="PASS">
+        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.User_Test@c260bdc]" started-at="2023-12-27T14:52:27 IST" name="createPageObject" finished-at="2023-12-27T14:52:27 IST" duration-ms="12" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPageObject -->
-        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@4a335fa8]" started-at="2023-12-27T00:01:15 IST" name="openUserPage" finished-at="2023-12-27T00:01:18 IST" duration-ms="3195" status="PASS">
+        <test-method signature="openUserPage()[pri:0, instance:qa.testcases.User_Test@c260bdc]" started-at="2023-12-27T14:52:27 IST" name="openUserPage" finished-at="2023-12-27T14:52:30 IST" duration-ms="3100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openUserPage -->
-        <test-method signature="addUserDetails()[pri:0, instance:qa.testcases.User_Test@4a335fa8]" started-at="2023-12-27T00:01:18 IST" name="addUserDetails" finished-at="2023-12-27T00:01:32 IST" depends-on-methods="qa.testcases.User_Test.openUserPage" duration-ms="13863" status="PASS">
+        <test-method signature="addUserDetails()[pri:0, instance:qa.testcases.User_Test@c260bdc]" started-at="2023-12-27T14:52:30 IST" name="addUserDetails" finished-at="2023-12-27T14:52:44 IST" depends-on-methods="qa.testcases.User_Test.openUserPage" duration-ms="14388" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addUserDetails -->
-        <test-method signature="validateUser()[pri:0, instance:qa.testcases.User_Test@4a335fa8]" started-at="2023-12-27T00:01:32 IST" name="validateUser" finished-at="2023-12-27T00:01:53 IST" depends-on-methods="qa.testcases.User_Test.addUserDetails" duration-ms="20473" status="FAIL">
+        <test-method signature="validateUser()[pri:0, instance:qa.testcases.User_Test@c260bdc]" started-at="2023-12-27T14:52:44 IST" name="validateUser" finished-at="2023-12-27T14:52:55 IST" depends-on-methods="qa.testcases.User_Test.addUserDetails" duration-ms="10394" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Employee name mismatch expected [true] but found [false]]]>
@@ -32,7 +32,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:149)
 at org.testng.Assert.assertEquals(Assert.java:131)
 at org.testng.Assert.assertEquals(Assert.java:1066)
 at org.testng.Assert.assertEquals(Assert.java:1030)
-at qa.testcases.User_Test.validateUser(User_Test.java:129)
+at qa.testcases.User_Test.validateUser(User_Test.java:178)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -69,7 +69,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
         </test-method> <!-- validateUser -->
       </class> <!-- qa.testcases.User_Test -->
       <class name="qa.testcases.Login_Test">
-        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@485a3466]" started-at="2023-12-27T00:01:02 IST" name="initialization" finished-at="2023-12-27T00:01:12 IST" duration-ms="10558" status="PASS">
+        <test-method is-config="true" signature="initialization(java.lang.String)[pri:0, instance:qa.testcases.Login_Test@546ccad7]" started-at="2023-12-27T14:52:21 IST" name="initialization" finished-at="2023-12-27T14:52:25 IST" duration-ms="4447" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -80,15 +80,15 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@485a3466]" started-at="2023-12-27T00:01:13 IST" name="createPageObject" finished-at="2023-12-27T00:01:13 IST" duration-ms="33" status="PASS">
+        <test-method is-config="true" signature="createPageObject()[pri:0, instance:qa.testcases.Login_Test@546ccad7]" started-at="2023-12-27T14:52:25 IST" name="createPageObject" finished-at="2023-12-27T14:52:25 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createPageObject -->
-        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@485a3466]" started-at="2023-12-27T00:01:13 IST" name="login_Test" finished-at="2023-12-27T00:01:15 IST" duration-ms="2614" status="PASS">
+        <test-method signature="login_Test()[pri:0, instance:qa.testcases.Login_Test@546ccad7]" started-at="2023-12-27T14:52:25 IST" name="login_Test" finished-at="2023-12-27T14:52:27 IST" duration-ms="1729" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login_Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@485a3466]" started-at="2023-12-27T00:01:53 IST" name="tearDown" finished-at="2023-12-27T00:01:53 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:qa.testcases.Login_Test@546ccad7]" started-at="2023-12-27T14:52:55 IST" name="tearDown" finished-at="2023-12-27T14:52:55 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

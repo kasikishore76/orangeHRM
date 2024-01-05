@@ -3,14 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="qa.testcases.Login_Test">
+      <class name="qa.testcases.User_Test">
         <methods>
           <include name="initialization"/>
-          <include name="createPageObject"/>
-          <include name="login_Test" invocation-numbers="1 2 3"/>
+          <include name="addUserDetails"/>
+          <include name="validateUser"/>
           <include name="tearDown"/>
+          <include name="createPageObject"/>
+          <include name="openUserPage"/>
         </methods>
-      </class> <!-- qa.testcases.Login_Test -->
+      </class> <!-- qa.testcases.User_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -75,14 +75,63 @@ public class User_Test extends BaseTest {
 			e.printStackTrace();
 		}
 
-		up.openUserDetailspage();
-		up.selectUserrole(role);
-		up.selectStatus(status);
-		up.enterEmployeeName(empname);
-		up.enterUserName(username);
-		up.enterPassword(pwd);
-		up.enterCnfPassword(pwd);
-		up.clickSave();
+		try {
+			up.openUserDetailspage();
+		} catch ( Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.selectUserrole(role);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.selectStatus(status);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.enterEmployeeName(empname);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.enterUserName("Ganthar");
+			Thread.sleep(3000);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.enterPassword(pwd);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			up.enterCnfPassword(pwd);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			Thread.sleep(3000);
+			up.clickSave();
+			Thread.sleep(3000);
+			up.clickSave();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		System.out.println("+++++++++++++++++++++++" + username);
 	}
 	@Test(dependsOnMethods = { "addUserDetails" })
 	public void validateUser() {

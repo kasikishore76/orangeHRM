@@ -11,6 +11,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
+import qa.utils.JavaScriptUtils;
+
 public class User_Page {
 	WebDriver driver;
 
@@ -121,7 +123,7 @@ public class User_Page {
 
 	public void enterEmployeeName(String empname) throws InterruptedException {
 		empNameText.sendKeys(empname);
-		Thread.sleep(10000);
+		Thread.sleep(3000);
 		int maxAttempts = 10;
 		int attempts = 0;
 
@@ -149,7 +151,13 @@ public class User_Page {
 
 	public void enterUserName(String usrname) {
 		try {
-			usernameText.sendKeys(usrname);
+//			usernameText.clear();
+//			usernameText.sendKeys(usrname);
+			
+			 JavascriptExecutor jse = (JavascriptExecutor)driver;
+			 jse.executeScript("arguments[0].value='"+usrname+"';", usernameText);
+		
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
@@ -179,7 +187,8 @@ public class User_Page {
 
 	public void clickSave() {
 		try {
-			saveBtn.click();
+			JavaScriptUtils.clickElementByJS(driver, saveBtn);
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
